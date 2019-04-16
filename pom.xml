@@ -32,12 +32,17 @@
 
 		<licenseName>apache_v2</licenseName>
 		<organizationName>REDMIC Project / Server</organizationName>
-		<inceptionYear>2019</inceptionYear>
 
 		<!-- Plugins -->
 		<license.maven.plugin.version>1.19</license.maven.plugin.version>
 		<jacoco.version>0.8.1</jacoco.version>
 	</properties>
+
+	<organization>
+		<name>REDMIC</name>
+		<url>https://redmic.es</url>
+	</organization>
+	<inceptionYear>2019</inceptionYear>
 
 	<dependencies>
 		<!-- Logs -->
@@ -50,19 +55,6 @@
 			<artifactId>log4j-core</artifactId>
 		</dependency>
 	</dependencies>
-
-	<repositories>
-		<repository>
-			<id>central</id>
-			<name>libs-release</name>
-			<url>https://artifactory.redmic.net/artifactory/libs-release</url>
-		</repository>
-		<repository>
-			<id>snapshots</id>
-			<name>libs-snapshot</name>
-			<url>https://artifactory.redmic.net/artifactory/libs-snapshot</url>
-		</repository>
-	</repositories>
 
 	<build>
 		<plugins>
