@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.0.RELEASE</version>
+		<version>3.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.redmic</groupId>
 	<artifactId>server-parent</artifactId>
-	<version>0.3.0</version>
+	<version>0.4.0</version>
 	<name>REDMIC project</name>
 	<description>Parent pom of REDMIC server</description>
 	<packaging>pom</packaging>
@@ -23,19 +23,10 @@
 	</licenses>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<java.version>1.8</java.version>
-		<tomcat.version>8.5.28</tomcat.version>
-
+		<java.version>21</java.version>
 		<licenseName>apache_v2</licenseName>
 		<organizationName>REDMIC Project / Server</organizationName>
-
-		<!-- Plugins -->
-		<license.maven.plugin.version>1.19</license.maven.plugin.version>
-		<jacoco.version>0.8.1</jacoco.version>
+		<project.inceptionYear>2019</project.inceptionYear>
 	</properties>
 
 	<organization>
@@ -43,68 +34,4 @@
 		<url>https://redmic.es</url>
 	</organization>
 	<inceptionYear>2019</inceptionYear>
-
-	<dependencies>
-		<!-- Logs -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>license-maven-plugin</artifactId>
-				<version>${license.maven.plugin.version}</version>
-				<configuration>
-					<verbose>false</verbose>
-					<licenseName>${licenseName}</licenseName>
-					<organizationName>${organizationName}</organizationName>
-					<inceptionYear>${project.inceptionYear}</inceptionYear>
-					<roots>
-						<root>src/main/java</root>
-						<root>src/test/java</root>
-					</roots>
-				</configuration>
-				<executions>
-					<execution>
-						<id>first</id>
-						<goals>
-							<goal>update-file-header</goal>
-						</goals>
-						<phase>process-sources</phase>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco.version}</version>
-				<configuration>
-					<haltOnFailure>false</haltOnFailure>
-				</configuration>
-				<executions>
-					<execution>
-						<id>pre-unit-test</id>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>post-unit-test</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
 </project>
